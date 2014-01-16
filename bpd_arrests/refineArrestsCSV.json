@@ -1,0 +1,843 @@
+[
+  {
+    "op": "core/column-rename",
+    "description": "Rename column sex to Race",
+    "oldColumnName": "sex",
+    "newColumnName": "Race"
+  },
+  {
+    "op": "core/column-rename",
+    "description": "Rename column race to gender",
+    "oldColumnName": "race",
+    "newColumnName": "gender"
+  },
+  {
+    "op": "core/column-rename",
+    "description": "Rename column Race to race",
+    "oldColumnName": "Race",
+    "newColumnName": "race"
+  },
+  {
+    "op": "core/column-split",
+    "description": "Split column Location 1 by separator",
+    "engineConfig": {
+      "facets": [],
+      "mode": "record-based"
+    },
+    "columnName": "Location 1",
+    "guessCellType": true,
+    "removeOriginalColumn": true,
+    "mode": "separator",
+    "separator": ",",
+    "regex": false,
+    "maxColumns": 0
+  },
+  {
+    "op": "core/column-split",
+    "description": "Split column Location 1 1 by separator",
+    "engineConfig": {
+      "facets": [],
+      "mode": "record-based"
+    },
+    "columnName": "Location 1 1",
+    "guessCellType": true,
+    "removeOriginalColumn": true,
+    "mode": "separator",
+    "separator": "(",
+    "regex": false,
+    "maxColumns": 0
+  },
+  {
+    "op": "core/column-removal",
+    "description": "Remove column Location 1 1 1",
+    "columnName": "Location 1 1 1"
+  },
+  {
+    "op": "core/column-split",
+    "description": "Split column Location 1 2 by separator",
+    "engineConfig": {
+      "facets": [],
+      "mode": "record-based"
+    },
+    "columnName": "Location 1 2",
+    "guessCellType": true,
+    "removeOriginalColumn": true,
+    "mode": "separator",
+    "separator": ")",
+    "regex": false,
+    "maxColumns": 0
+  },
+  {
+    "op": "core/column-rename",
+    "description": "Rename column Location 1 1 2 to lat",
+    "oldColumnName": "Location 1 1 2",
+    "newColumnName": "lat"
+  },
+  {
+    "op": "core/column-rename",
+    "description": "Rename column Location 1 2 1 to long",
+    "oldColumnName": "Location 1 2 1",
+    "newColumnName": "long"
+  },
+  {
+    "op": "core/row-flag",
+    "description": "Flag rows",
+    "engineConfig": {
+      "facets": [
+        {
+          "invert": false,
+          "expression": "isBlank(value)",
+          "selectError": false,
+          "omitError": false,
+          "selectBlank": false,
+          "name": "lat",
+          "omitBlank": false,
+          "columnName": "lat",
+          "type": "list",
+          "selection": [
+            {
+              "v": {
+                "v": true,
+                "l": "true"
+              }
+            }
+          ]
+        }
+      ],
+      "mode": "record-based"
+    },
+    "flagged": true
+  },
+  {
+    "op": "core/row-removal",
+    "description": "Remove rows",
+    "engineConfig": {
+      "facets": [
+        {
+          "invert": false,
+          "expression": "isBlank(value)",
+          "selectError": false,
+          "omitError": false,
+          "selectBlank": false,
+          "name": "lat",
+          "omitBlank": false,
+          "columnName": "lat",
+          "type": "list",
+          "selection": [
+            {
+              "v": {
+                "v": true,
+                "l": "true"
+              }
+            }
+          ]
+        }
+      ],
+      "mode": "record-based"
+    }
+  },
+  {
+    "op": "core/column-removal",
+    "description": "Remove column Location 1 2 2",
+    "columnName": "Location 1 2 2"
+  },
+  {
+    "op": "core/column-split",
+    "description": "Split column incidentOffense by separator",
+    "engineConfig": {
+      "facets": [],
+      "mode": "record-based"
+    },
+    "columnName": "incidentOffense",
+    "guessCellType": false,
+    "removeOriginalColumn": false,
+    "mode": "separator",
+    "separator": "-",
+    "regex": false,
+    "maxColumns": 2
+  },
+  {
+    "op": "core/blank-down",
+    "description": "Blank down cells in column incidentOffense 1",
+    "engineConfig": {
+      "facets": [
+        {
+          "invert": false,
+          "expression": "value",
+          "selectError": false,
+          "omitError": false,
+          "selectBlank": false,
+          "name": "incidentOffense 1",
+          "omitBlank": false,
+          "columnName": "incidentOffense 1",
+          "type": "list",
+          "selection": [
+            {
+              "v": {
+                "v": "Unknown Offense",
+                "l": "Unknown Offense"
+              }
+            }
+          ]
+        }
+      ],
+      "mode": "record-based"
+    },
+    "columnName": "incidentOffense 1"
+  },
+  {
+    "op": "core/mass-edit",
+    "description": "Mass edit cells in column incidentOffense 1",
+    "engineConfig": {
+      "facets": [],
+      "mode": "record-based"
+    },
+    "columnName": "incidentOffense 1",
+    "expression": "value",
+    "edits": [
+      {
+        "fromBlank": false,
+        "fromError": false,
+        "from": [
+          "Unknown Offense"
+        ],
+        "to": ""
+      }
+    ]
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column incidentOffense 1 using expression value.trim()",
+    "engineConfig": {
+      "facets": [],
+      "mode": "record-based"
+    },
+    "columnName": "incidentOffense 1",
+    "expression": "value.trim()",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column incidentOffense 1 using expression grel:\"0000\"",
+    "engineConfig": {
+      "facets": [
+        {
+          "invert": false,
+          "expression": "isBlank(value)",
+          "selectError": false,
+          "omitError": false,
+          "selectBlank": false,
+          "name": "incidentOffense 1",
+          "omitBlank": false,
+          "columnName": "incidentOffense 1",
+          "type": "list",
+          "selection": [
+            {
+              "v": {
+                "v": true,
+                "l": "true"
+              }
+            }
+          ]
+        }
+      ],
+      "mode": "record-based"
+    },
+    "columnName": "incidentOffense 1",
+    "expression": "grel:\"0000\"",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column incidentOffense 1 using expression grel:\"0000\"[0,4-value.length()] + value",
+    "engineConfig": {
+      "facets": [],
+      "mode": "record-based"
+    },
+    "columnName": "incidentOffense 1",
+    "expression": "grel:\"0000\"[0,4-value.length()] + value",
+    "onError": "set-to-blank",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/column-addition",
+    "description": "Create column offenseGenCode at index 9 based on column incidentOffense 1 using expression grel:value",
+    "engineConfig": {
+      "facets": [],
+      "mode": "record-based"
+    },
+    "newColumnName": "offenseGenCode",
+    "columnInsertIndex": 9,
+    "baseColumnName": "incidentOffense 1",
+    "expression": "grel:value",
+    "onError": "set-to-blank"
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column offenseGenCode using expression value.toNumber()",
+    "engineConfig": {
+      "facets": [
+        {
+          "invert": false,
+          "expression": "value",
+          "selectError": false,
+          "omitError": false,
+          "selectBlank": false,
+          "name": "offenseGenCode",
+          "omitBlank": false,
+          "columnName": "offenseGenCode",
+          "type": "list",
+          "selection": [
+            {
+              "v": {
+                "v": "001A",
+                "l": "001A"
+              }
+            }
+          ]
+        }
+      ],
+      "mode": "record-based"
+    },
+    "columnName": "offenseGenCode",
+    "expression": "value.toNumber()",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/column-removal",
+    "description": "Remove column offenseGenCode",
+    "columnName": "offenseGenCode"
+  },
+  {
+    "op": "core/column-addition",
+    "description": "Create column OffGenCode at index 9 based on column incidentOffense 1 using expression grel:value",
+    "engineConfig": {
+      "facets": [
+        {
+          "invert": false,
+          "expression": "value",
+          "selectError": false,
+          "omitError": false,
+          "selectBlank": false,
+          "name": "offenseGenCode",
+          "omitBlank": false,
+          "columnName": "offenseGenCode",
+          "type": "list",
+          "selection": [
+            {
+              "v": {
+                "v": "001A",
+                "l": "001A"
+              }
+            }
+          ]
+        }
+      ],
+      "mode": "record-based"
+    },
+    "newColumnName": "OffGenCode",
+    "columnInsertIndex": 9,
+    "baseColumnName": "incidentOffense 1",
+    "expression": "grel:value",
+    "onError": "set-to-blank"
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column OffGenCode using expression value.toNumber()",
+    "engineConfig": {
+      "facets": [
+        {
+          "invert": false,
+          "expression": "value",
+          "selectError": false,
+          "omitError": false,
+          "selectBlank": false,
+          "name": "offenseGenCode",
+          "omitBlank": false,
+          "columnName": "offenseGenCode",
+          "type": "list",
+          "selection": [
+            {
+              "v": {
+                "v": "001A",
+                "l": "001A"
+              }
+            }
+          ]
+        }
+      ],
+      "mode": "record-based"
+    },
+    "columnName": "OffGenCode",
+    "expression": "value.toNumber()",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/mass-edit",
+    "description": "Mass edit cells in column OffGenCode",
+    "engineConfig": {
+      "facets": [
+        {
+          "invert": false,
+          "expression": "value",
+          "selectError": false,
+          "omitError": false,
+          "selectBlank": false,
+          "name": "offenseGenCode",
+          "omitBlank": false,
+          "columnName": "offenseGenCode",
+          "type": "list",
+          "selection": [
+            {
+              "v": {
+                "v": "001A",
+                "l": "001A"
+              }
+            }
+          ]
+        }
+      ],
+      "mode": "record-based"
+    },
+    "columnName": "OffGenCode",
+    "expression": "value",
+    "edits": [
+      {
+        "fromBlank": false,
+        "fromError": false,
+        "from": [
+          "001A"
+        ],
+        "to": "001"
+      }
+    ]
+  },
+  {
+    "op": "core/mass-edit",
+    "description": "Mass edit cells in column OffGenCode",
+    "engineConfig": {
+      "facets": [
+        {
+          "invert": false,
+          "expression": "value",
+          "selectError": false,
+          "omitError": false,
+          "selectBlank": false,
+          "name": "offenseGenCode",
+          "omitBlank": false,
+          "columnName": "offenseGenCode",
+          "type": "list",
+          "selection": [
+            {
+              "v": {
+                "v": "001A",
+                "l": "001A"
+              }
+            }
+          ]
+        }
+      ],
+      "mode": "record-based"
+    },
+    "columnName": "OffGenCode",
+    "expression": "value",
+    "edits": [
+      {
+        "fromBlank": false,
+        "fromError": false,
+        "from": [
+          "002A"
+        ],
+        "to": "002"
+      }
+    ]
+  },
+  {
+    "op": "core/mass-edit",
+    "description": "Mass edit cells in column OffGenCode",
+    "engineConfig": {
+      "facets": [
+        {
+          "invert": false,
+          "expression": "value",
+          "selectError": false,
+          "omitError": false,
+          "selectBlank": false,
+          "name": "offenseGenCode",
+          "omitBlank": false,
+          "columnName": "offenseGenCode",
+          "type": "list",
+          "selection": [
+            {
+              "v": {
+                "v": "001A",
+                "l": "001A"
+              }
+            }
+          ]
+        }
+      ],
+      "mode": "record-based"
+    },
+    "columnName": "OffGenCode",
+    "expression": "value",
+    "edits": [
+      {
+        "fromBlank": false,
+        "fromError": false,
+        "from": [
+          "002B"
+        ],
+        "to": "002"
+      }
+    ]
+  },
+  {
+    "op": "core/mass-edit",
+    "description": "Mass edit cells in column OffGenCode",
+    "engineConfig": {
+      "facets": [
+        {
+          "invert": false,
+          "expression": "value",
+          "selectError": false,
+          "omitError": false,
+          "selectBlank": false,
+          "name": "offenseGenCode",
+          "omitBlank": false,
+          "columnName": "offenseGenCode",
+          "type": "list",
+          "selection": [
+            {
+              "v": {
+                "v": "001A",
+                "l": "001A"
+              }
+            }
+          ]
+        }
+      ],
+      "mode": "record-based"
+    },
+    "columnName": "OffGenCode",
+    "expression": "value",
+    "edits": [
+      {
+        "fromBlank": false,
+        "fromError": false,
+        "from": [
+          "002C"
+        ],
+        "to": "002"
+      }
+    ]
+  },
+  {
+    "op": "core/mass-edit",
+    "description": "Mass edit cells in column OffGenCode",
+    "engineConfig": {
+      "facets": [
+        {
+          "invert": false,
+          "expression": "value",
+          "selectError": false,
+          "omitError": false,
+          "selectBlank": false,
+          "name": "offenseGenCode",
+          "omitBlank": false,
+          "columnName": "offenseGenCode",
+          "type": "list",
+          "selection": [
+            {
+              "v": {
+                "v": "001A",
+                "l": "001A"
+              }
+            }
+          ]
+        }
+      ],
+      "mode": "record-based"
+    },
+    "columnName": "OffGenCode",
+    "expression": "value",
+    "edits": [
+      {
+        "fromBlank": false,
+        "fromError": false,
+        "from": [
+          "002G"
+        ],
+        "to": "002"
+      }
+    ]
+  },
+  {
+    "op": "core/mass-edit",
+    "description": "Mass edit cells in column OffGenCode",
+    "engineConfig": {
+      "facets": [
+        {
+          "invert": false,
+          "expression": "value",
+          "selectError": false,
+          "omitError": false,
+          "selectBlank": false,
+          "name": "offenseGenCode",
+          "omitBlank": false,
+          "columnName": "offenseGenCode",
+          "type": "list",
+          "selection": [
+            {
+              "v": {
+                "v": "001A",
+                "l": "001A"
+              }
+            }
+          ]
+        }
+      ],
+      "mode": "record-based"
+    },
+    "columnName": "OffGenCode",
+    "expression": "value",
+    "edits": [
+      {
+        "fromBlank": false,
+        "fromError": false,
+        "from": [
+          "002H"
+        ],
+        "to": "002"
+      }
+    ]
+  },
+  {
+    "op": "core/mass-edit",
+    "description": "Mass edit cells in column OffGenCode",
+    "engineConfig": {
+      "facets": [
+        {
+          "invert": false,
+          "expression": "value",
+          "selectError": false,
+          "omitError": false,
+          "selectBlank": false,
+          "name": "offenseGenCode",
+          "omitBlank": false,
+          "columnName": "offenseGenCode",
+          "type": "list",
+          "selection": [
+            {
+              "v": {
+                "v": "001A",
+                "l": "001A"
+              }
+            }
+          ]
+        }
+      ],
+      "mode": "record-based"
+    },
+    "columnName": "OffGenCode",
+    "expression": "value",
+    "edits": [
+      {
+        "fromBlank": false,
+        "fromError": false,
+        "from": [
+          "002J"
+        ],
+        "to": "002"
+      }
+    ]
+  },
+  {
+    "op": "core/column-split",
+    "description": "Split column OffGenCode by separator",
+    "engineConfig": {
+      "facets": [],
+      "mode": "record-based"
+    },
+    "columnName": "OffGenCode",
+    "guessCellType": true,
+    "removeOriginalColumn": false,
+    "mode": "separator",
+    "separator": "A",
+    "regex": false,
+    "maxColumns": 0
+  },
+  {
+    "op": "core/column-removal",
+    "description": "Remove column OffGenCode",
+    "columnName": "OffGenCode"
+  },
+  {
+    "op": "core/column-split",
+    "description": "Split column OffGenCode 1 by separator",
+    "engineConfig": {
+      "facets": [],
+      "mode": "record-based"
+    },
+    "columnName": "OffGenCode 1",
+    "guessCellType": true,
+    "removeOriginalColumn": true,
+    "mode": "separator",
+    "separator": "B",
+    "regex": false,
+    "maxColumns": 0
+  },
+  {
+    "op": "core/column-split",
+    "description": "Split column OffGenCode 1 1 by separator",
+    "engineConfig": {
+      "facets": [],
+      "mode": "record-based"
+    },
+    "columnName": "OffGenCode 1 1",
+    "guessCellType": true,
+    "removeOriginalColumn": true,
+    "mode": "separator",
+    "separator": "B",
+    "regex": false,
+    "maxColumns": 0
+  },
+  {
+    "op": "core/column-split",
+    "description": "Split column OffGenCode 1 1 1 by separator",
+    "engineConfig": {
+      "facets": [],
+      "mode": "record-based"
+    },
+    "columnName": "OffGenCode 1 1 1",
+    "guessCellType": true,
+    "removeOriginalColumn": true,
+    "mode": "separator",
+    "separator": "/w",
+    "regex": true,
+    "maxColumns": 0
+  },
+  {
+    "op": "core/column-split",
+    "description": "Split column OffGenCode 1 1 1 1 by separator",
+    "engineConfig": {
+      "facets": [],
+      "mode": "record-based"
+    },
+    "columnName": "OffGenCode 1 1 1 1",
+    "guessCellType": true,
+    "removeOriginalColumn": true,
+    "mode": "separator",
+    "separator": "/d",
+    "regex": true,
+    "maxColumns": 0
+  },
+  {
+    "op": "core/column-removal",
+    "description": "Remove column OffGenCode 1 1 1 1 1",
+    "columnName": "OffGenCode 1 1 1 1 1"
+  },
+  {
+    "op": "core/column-removal",
+    "description": "Remove column OffGenCode 1 2",
+    "columnName": "OffGenCode 1 2"
+  },
+  {
+    "op": "core/column-removal",
+    "description": "Remove column OffGenCode 2",
+    "columnName": "OffGenCode 2"
+  },
+  {
+    "op": "core/column-split",
+    "description": "Split column incidentOffense 1 by separator",
+    "engineConfig": {
+      "facets": [],
+      "mode": "record-based"
+    },
+    "columnName": "incidentOffense 1",
+    "guessCellType": true,
+    "removeOriginalColumn": false,
+    "mode": "separator",
+    "separator": "/d",
+    "regex": true,
+    "maxColumns": 0
+  },
+  {
+    "op": "core/column-removal",
+    "description": "Remove column incidentOffense 1 1",
+    "columnName": "incidentOffense 1 1"
+  },
+  {
+    "op": "core/column-split",
+    "description": "Split column incidentOffense 1 by separator",
+    "engineConfig": {
+      "facets": [],
+      "mode": "record-based"
+    },
+    "columnName": "incidentOffense 1",
+    "guessCellType": true,
+    "removeOriginalColumn": false,
+    "mode": "separator",
+    "separator": "\\D",
+    "regex": true,
+    "maxColumns": 0
+  },
+  {
+    "op": "core/column-rename",
+    "description": "Rename column incidentOffense 1 1 to offenseGroup",
+    "oldColumnName": "incidentOffense 1 1",
+    "newColumnName": "offenseGroup"
+  },
+  {
+    "op": "core/column-split",
+    "description": "Split column chargeDescription by separator",
+    "engineConfig": {
+      "facets": [],
+      "mode": "record-based"
+    },
+    "columnName": "chargeDescription",
+    "guessCellType": true,
+    "removeOriginalColumn": false,
+    "mode": "separator",
+    "separator": " || ",
+    "regex": false,
+    "maxColumns": 0
+  },
+  {
+    "op": "core/column-split",
+    "description": "Split column charge by separator",
+    "engineConfig": {
+      "facets": [],
+      "mode": "record-based"
+    },
+    "columnName": "charge",
+    "guessCellType": true,
+    "removeOriginalColumn": false,
+    "mode": "separator",
+    "separator": "\\D",
+    "regex": true,
+    "maxColumns": 0
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column arrestLocation using expression value.trim()",
+    "engineConfig": {
+      "facets": [],
+      "mode": "record-based"
+    },
+    "columnName": "arrestLocation",
+    "expression": "value.trim()",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  }
+]
