@@ -11,7 +11,7 @@ Elliott Plack
 
 ---
 
-<em>Baltimore</em> #opendata + + + + + 
+*Baltimore* #opendata + + + + + 
 
 ---
 
@@ -19,7 +19,7 @@ Elliott Plack
 
 ---
 
-<em>OpenRefine</em> is a tool originally developed by Google
+*OpenRefine* is a tool originally developed by Google
 
 ---
 
@@ -32,11 +32,11 @@ Get it at
 
 ---
 
-<em>Why</em> use it?
+*Why* use it?
 
 ---
 
-<em>#opendata</em> is messy!
+*#opendata* is messy!
 
 ---
 
@@ -50,7 +50,7 @@ Exported from mainframe
 
 ---
 
-top <em>complaints</em>
+top *complaints*
 
 * <code>ALL CAPS</code>
 * combined columns
@@ -70,15 +70,17 @@ what is <font color = "blue">OpenRefine</font>?
 
 ---
 
-runs <em>locally</em> as server
+runs *locally* as server
+
+![](https://dl.dropboxusercontent.com/u/2745459/GR-dock.png)
 
 ---
 
-all input in <em>browser</em>
+all input in *browser*
 
 ---
 
-processing is <em>local</em>
+processing is *local*
 
 ---
 
@@ -99,3 +101,7 @@ or GUI
 ---
 
 live demo
+
+---
+
+questions?

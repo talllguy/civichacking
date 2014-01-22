@@ -1,96 +1,49 @@
-## civic hacking meetup
+## next: maps
 
 ---
 
-22Jan2013 1830
+Maps are great for *analysis*
 
 ---
 
-<em>Baltimore</em> #opendata + + + + + 
+and *visualization*!
 
 ---
 
-[OpenRefine](http://openrefine.org/index.html)!
+![](https://dl.dropboxusercontent.com/u/2745459/heroin.png)
 
 ---
 
-<em>OpenRefine</em> is a tool originally developed by Google
+![](https://dl.dropboxusercontent.com/u/2745459/mtastops.png)
 
 ---
 
-Stable version *2.5* is still branded Google Refine
+![](https://dl.dropboxusercontent.com/u/2745459/vacants.png)
 
 ---
 
-Get it at  
-[openrefine.org](http://openrefine.org/index.html)
+![](https://dl.dropboxusercontent.com/u/2745459/vacants-hex.png)
 
 ---
 
-<em>Why</em> use it?
+How?
 
 ---
 
-<em>#opendata</em> is messy!
+I use CartoDB
 
 ---
 
-gov't data
-
-![](http://upload.wikimedia.org/wikipedia/commons/1/19/Zenith_Z-19_Terminal.jpg)
+*Free* to play around with
 
 ---
 
-Exported from mainframe
+cartodb.com
 
 ---
 
-top <em>complaints</em>
-
-* <code>ALL CAPS</code>
-* combined columns
+demo
 
 ---
 
-* non-standard dates
-* funky lat/long
-
----
-
-fix *all* these things easily!
-
----
-
-what is <font color = "blue">OpenRefine</font>?
-
----
-
-runs <em>locally</em> as server
-
----
-
-all input in <em>browser</em>
-
----
-
-processing is <em>local</em>
-
----
-
-fast
-
----
-
-free
-
----
-
-programmable
-
----
-
-or GUI
-
----
-
-live demo
+questions?
