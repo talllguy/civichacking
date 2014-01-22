@@ -1,8 +1,13 @@
-## civic hacking
+## civic hacking meetup
 
 ---
 
-22 Jan 2013
+22Jan2013 1830
+
+---
+
+Elliott Plack  
+@talllguy
 
 ---
 
@@ -27,15 +32,21 @@ Get it at
 
 ---
 
-Why use it?
+<em>Why</em> use it?
 
 ---
 
-<em>#opendata</em> is messy
+<em>#opendata</em> is messy!
 
 ---
 
-![gov't data = mainframe (yuck!)](http://upload.wikimedia.org/wikipedia/commons/1/19/Zenith_Z-19_Terminal.jpg)
+gov't data
+
+![](http://upload.wikimedia.org/wikipedia/commons/1/19/Zenith_Z-19_Terminal.jpg)
+
+---
+
+Exported from mainframe
 
 ---
 
@@ -55,18 +66,36 @@ fix *all* these things easily!
 
 ---
 
-demo
+what is <font color = "blue">OpenRefine</font>?
 
 ---
 
-runs locally as server
+runs <em>locally</em> as server
 
 ---
 
-all input in browser
+all input in <em>browser</em>
 
 ---
 
-processing is local
+processing is <em>local</em>
 
+---
 
+fast
+
+---
+
+free
+
+---
+
+programmable
+
+---
+
+or GUI
+
+---
+
+live demo
