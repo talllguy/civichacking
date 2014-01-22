@@ -6,16 +6,16 @@
 
 ---
 
-Elliott Plack  
-@talllguy
-
----
-
 *Baltimore* #opendata + + + + + 
 
 ---
 
 [OpenRefine](http://openrefine.org/index.html)!
+
+---
+
+Elliott Plack  
+@talllguy
 
 ---
 
@@ -101,6 +101,10 @@ or GUI
 ---
 
 live demo
+
+---
+
+start [here](https://data.baltimorecity.gov/Public-Safety/BPD-Arrests/3i3v-ibrt)
 
 ---
 
